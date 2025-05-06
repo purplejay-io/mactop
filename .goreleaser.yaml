@@ -14,7 +14,7 @@ builds:
     binary: "{{ .ProjectName }}"
 
 archives:
-  - format: tar.gz
+  - formats: ['tar.gz']
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     files:
       - LICENSE
@@ -24,7 +24,7 @@ checksum:
   name_template: 'checksums.txt'
 
 snapshot:
-  name_template: "{{ incpatch .Version }}-next"
+  version_template: "{{ incpatch .Version }}-next"
 
 changelog:
   sort: asc
@@ -35,12 +35,12 @@ changelog:
 
 brews:
   - name: "{{ .ProjectName }}"
-    homepage: "https://github.com/context-labs/mactop"
+    homepage: "https://github.com/purplejay-io/mactop"
     description: "Apple Silicon Monitor Top written in Go Lang"
-    url_template: "https://github.com/context-labs/mactop/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    url_template: "https://github.com/purplejay-io/mactop/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     caveats: "mactop requires macOS 12+, and runs only on Apple Silicon."
     install: |
       bin.install "{{ .ProjectName }}"
     repository:
-      owner: "context-labs"
-      name: "mactop"
+      owner: "purplejay-io"
+      name: "pj-mactop"
