@@ -10,4 +10,4 @@ goreleaser build --clean
 token="$(op read "op://employee/GitHub Personal Access Token/token")"
 export GITHUB_TOKEN="$token"
 
-goreleaser release
+goreleaser release --clean
