@@ -44,3 +44,4 @@ brews:
     repository:
       owner: "purplejay-io"
       name: "mactop"
+      branch: "develop"
