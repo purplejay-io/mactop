@@ -7,7 +7,7 @@ goreleaser healthcheck
 
 goreleaser build --clean
 
-token="$(op read "op://employee/GitHub Personal Access Token/token")"
+token="$(op read "op://employee/gh_mactop_deploy_token/password")"
 export GITHUB_TOKEN="$token"
 
 goreleaser release --clean
